@@ -80,7 +80,7 @@ Return `null` or `undefined` for no connection.
 | `reconnect.initialDelayMs` | `500`        | Delay before the first reconnect.                                                 |
 | `reconnect.maxDelayMs`     | `10000`      | Cap for any delay.                                                                |
 | `reconnect.factor`         | `2`          | Multiplier per failed attempt.                                                    |
-| `reconnect.maxAttempts`    | `Infinity`   | Failed attempts in a row before status becomes `'error'`.                         |
+| `reconnect.maxAttempts`    | `Infinity`   | Reconnect attempts in a row before giving up with status `'error'`.               |
 | `withCredentials`          | `false`      | Passed to `EventSource`. Sends cookies to another origin.                         |
 | `lastEventIdParam`         | none         | On a backoff reconnect, add the last event id to the url under this query name.   |
 | `injector`                 | current      | Injector to use outside an injection context.                                     |

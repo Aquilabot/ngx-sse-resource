@@ -38,7 +38,7 @@ export interface SseBackoff {
   maxDelayMs?: number;
   /** Each failed attempt multiplies the delay by this. Default 2. */
   factor?: number;
-  /** Give up after this many failed attempts in a row. Default Infinity. */
+  /** Reconnect attempts in a row before giving up with status `error`. Default Infinity. */
   maxAttempts?: number;
 }
 
