@@ -1,5 +1,10 @@
-/*
- * Public API Surface of ngx-sse-resource
- */
-
-export * from './lib/ngx-sse-resource';
+export {
+  SSE_EVENT_SOURCE,
+  SseConnectionError,
+  sseResource,
+  type EventSourceConstructor,
+  type SseBackoff,
+  type SseResource,
+  type SseResourceOptions,
+  type SseStatus,
+} from './lib/sse-resource';

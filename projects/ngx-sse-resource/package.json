@@ -1,9 +1,19 @@
 {
   "name": "ngx-sse-resource",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "Server-Sent Events as Angular signals, with reconnect backoff and SSR support.",
+  "keywords": ["angular", "signals", "server-sent-events", "sse", "eventsource", "zoneless"],
+  "author": "Jean Carlo Benites Porras",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aquilabot/ngx-sse-resource.git"
+  },
+  "homepage": "https://github.com/Aquilabot/ngx-sse-resource#readme",
+  "bugs": "https://github.com/Aquilabot/ngx-sse-resource/issues",
   "peerDependencies": {
-    "@angular/common": "^22.2.0",
-    "@angular/core": "^22.2.0"
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
