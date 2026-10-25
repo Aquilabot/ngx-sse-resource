@@ -12,11 +12,13 @@ itself when the component or service is destroyed.
 - Replaceable `EventSource` through an `InjectionToken`, for tests and polyfills
 - No dependencies besides Angular
 
-```
-npm install ngx-sse-resource
-```
+Requires Angular 22. Not on npm yet. Build it and install the package from `dist`:
 
-Requires Angular 22.
+```
+git clone https://github.com/Aquilabot/ngx-sse-resource && cd ngx-sse-resource
+npm ci && npm run build
+npm install /path/to/ngx-sse-resource/dist/ngx-sse-resource   # from your app
+```
 
 ## Example
 
