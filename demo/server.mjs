@@ -6,12 +6,19 @@ import { extname, join, normalize } from 'node:path';
 
 const port = Number(process.env.PORT ?? 4300);
 const root = join(import.meta.dirname, '..', 'dist', 'demo', 'browser');
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.ico': 'image/x-icon' };
+const types = {
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.css': 'text/css',
+  '.ico': 'image/x-icon',
+};
 const dropped = new Set();
 const started = new Map();
 
 function streamJob(req, res, jobId, url) {
-  const resumeFrom = Number(url.searchParams.get('lastEventId') ?? req.headers['last-event-id'] ?? 0);
+  const resumeFrom = Number(
+    url.searchParams.get('lastEventId') ?? req.headers['last-event-id'] ?? 0,
+  );
   if (!started.has(jobId)) started.set(jobId, Date.now());
   res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
   res.write('retry: 2000\n\n');
@@ -43,7 +50,9 @@ async function serveFile(res, pathname) {
   if (!file.startsWith(root)) return res.writeHead(403).end();
   try {
     const body = await readFile(file);
-    res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' }).end(body);
+    res
+      .writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' })
+      .end(body);
   } catch {
     res.writeHead(404).end('not found');
   }

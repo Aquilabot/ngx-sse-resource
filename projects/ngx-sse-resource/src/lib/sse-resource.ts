@@ -108,7 +108,8 @@ export function sseResource<T = unknown>(
   }
   const injector = options.injector ?? inject(Injector);
 
-  const events = typeof options.event === 'string' ? [options.event] : (options.event ?? ['message']);
+  const events =
+    typeof options.event === 'string' ? [options.event] : (options.event ?? ['message']);
   for (const name of events) {
     if (RESERVED.includes(name)) {
       throw new Error(`sseResource: "${name}" is an EventSource event, not a server event name`);

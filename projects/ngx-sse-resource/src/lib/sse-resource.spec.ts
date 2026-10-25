@@ -237,7 +237,10 @@ describe('sseResource reconnect with backoff', () => {
   });
 
   it('sends the last event id as a query parameter on reconnect', () => {
-    create(() => '/events?job=7', { lastEventIdParam: 'lastEventId', reconnect: { initialDelayMs: 1 } });
+    create(() => '/events?job=7', {
+      lastEventIdParam: 'lastEventId',
+      reconnect: { initialDelayMs: 1 },
+    });
     FakeEventSource.last.emit('1', 'message', '42');
     FakeEventSource.last.fail();
     vi.advanceTimersByTime(1);
@@ -379,7 +382,10 @@ describe('sseResource lifecycle', () => {
     setup();
     vi.useFakeTimers();
     const child = createEnvironmentInjector([], TestBed.inject(EnvironmentInjector));
-    const res = sseResource(() => '/events', { injector: child, reconnect: { initialDelayMs: 100 } });
+    const res = sseResource(() => '/events', {
+      injector: child,
+      reconnect: { initialDelayMs: 100 },
+    });
     TestBed.tick();
     FakeEventSource.last.open();
 
@@ -417,7 +423,9 @@ describe('sseResource lifecycle', () => {
   });
 
   it('stays idle when there is no EventSource', () => {
-    TestBed.configureTestingModule({ providers: [{ provide: SSE_EVENT_SOURCE, useValue: undefined }] });
+    TestBed.configureTestingModule({
+      providers: [{ provide: SSE_EVENT_SOURCE, useValue: undefined }],
+    });
     const res = create(() => '/events');
     expect(res.status()).toBe('idle');
   });

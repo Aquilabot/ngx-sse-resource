@@ -2,7 +2,14 @@
   "name": "ngx-sse-resource",
   "version": "0.1.0",
   "description": "Server-Sent Events as Angular signals, with reconnect backoff and SSR support.",
-  "keywords": ["angular", "signals", "server-sent-events", "sse", "eventsource", "zoneless"],
+  "keywords": [
+    "angular",
+    "signals",
+    "server-sent-events",
+    "sse",
+    "eventsource",
+    "zoneless"
+  ],
   "author": "Jean Carlo Benites Porras",
   "license": "MIT",
   "repository": {

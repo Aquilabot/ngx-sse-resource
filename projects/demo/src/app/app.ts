@@ -16,7 +16,9 @@ type JobEvent = { type: 'progress'; percent: number } | { type: 'done'; elapsedM
       <progress max="100" [value]="percent()"></progress>
       {{ percent() }}%
     </p>
-    <p>Status: <strong>{{ job.status() }}</strong></p>
+    <p>
+      Status: <strong>{{ job.status() }}</strong>
+    </p>
     <p>Last event id: {{ job.lastEventId() ?? '-' }}</p>
     @if (job.value(); as v) {
       @if (v.type === 'done') {

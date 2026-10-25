@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "lint": "prettier --check .",
     "test": "ng test ngx-sse-resource",
     "build": "ng build ngx-sse-resource && node -e \"for (const f of ['README.md','LICENSE']) require('fs').copyFileSync(f, 'dist/ngx-sse-resource/' + f)\"",
     "demo": "npm run build && ng build demo && node demo/server.mjs"
