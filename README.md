@@ -1,5 +1,7 @@
 # ngx-sse-resource
 
+[![CI](https://github.com/Aquilabot/ngx-sse-resource/actions/workflows/ci.yml/badge.svg)](https://github.com/Aquilabot/ngx-sse-resource/actions/workflows/ci.yml)
+
 Server-Sent Events as Angular signals. `sseResource()` opens an `EventSource`,
 puts the last event in a signal, reconnects with exponential backoff and closes
 itself when the component or service is destroyed.
